@@ -44,4 +44,8 @@ describe('ordinal', () => {
         expect(numberToOrdinal(40)).toEqual('40th');
         expect(numberToOrdinal(50)).toEqual('50th');
     });
+
+    it('throws errors on negative numbers', () => {
+        expect(() => {numberToOrdinal(-1)}).toThrowError("ordinal numbers must be positive");
+    });
 });

@@ -1,8 +1,3 @@
-// I don't know why but it expects that blah test exist (????????)
-export const sum = (a: number, b: number) => {
-  return a + b;
-};
-
 export const maskify = (creditCardNumber: string): string => {
   if (!creditCardNumber.match(/^\d+$/)) {
     throw Error('Credit card number can only contain digits');

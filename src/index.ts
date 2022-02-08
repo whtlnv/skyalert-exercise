@@ -4,12 +4,17 @@ export const sum = (a: number, b: number) => {
 };
 
 export const maskify = (creditCardNumber: String): String => {
-  const creditCardNumberLength = creditCardNumber.length
+  const creditCardNumberLength = creditCardNumber.length;
   if (creditCardNumberLength < 7) {
     return creditCardNumber;
   }
-   
-  return creditCardNumber.substring(0, 1) + 
-    "x".repeat(creditCardNumberLength - 5) + 
-    creditCardNumber.substring(creditCardNumberLength-4, creditCardNumberLength);
+
+  return (
+    creditCardNumber.substring(0, 1) +
+    'x'.repeat(creditCardNumberLength - 5) +
+    creditCardNumber.substring(
+      creditCardNumberLength - 4,
+      creditCardNumberLength
+    )
+  );
 };

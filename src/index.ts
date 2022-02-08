@@ -43,3 +43,7 @@ export const numberToOrdinal = (n: number): string => {
   const lastDigit: string = nStr.substring(nStr.length - 1, nStr.length);
   return nStr + (lastDigit in suffixes ? suffixes[lastDigit] : 'th');
 };
+
+export const calculate = (expr: string): number => {
+  return Number(expr);
+}

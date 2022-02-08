@@ -14,4 +14,8 @@ describe('maskify', () => {
     expect(maskify('123456')).toEqual('123456');
     expect(maskify('1')).toEqual('1');
   });
+
+  it('fails when a character is introduced as credit card number', () => {
+    expect(() => maskify('123456789abc')).toThrowError('Credit card number can only contain digits');
+  });
 });

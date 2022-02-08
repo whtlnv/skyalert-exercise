@@ -4,7 +4,7 @@ export const sum = (a: number, b: number) => {
 };
 
 export const maskify = (creditCardNumber: string): string => {
-  if(!creditCardNumber.match(/^\d+$/)) {
+  if (!creditCardNumber.match(/^\d+$/)) {
     throw Error('Credit card number can only contain digits');
   }
 

@@ -16,6 +16,8 @@ describe('maskify', () => {
   });
 
   it('fails when a character is introduced as credit card number', () => {
-    expect(() => maskify('123456789abc')).toThrowError('Credit card number can only contain digits');
+    expect(() => maskify('123456789abc')).toThrowError(
+      'Credit card number can only contain digits'
+    );
   });
 });

@@ -1,8 +1,3 @@
-// I don't know why but it expects that blah test exist (????????)
-export const sum = (a: number, b: number) => {
-  return a + b;
-};
-
 export const maskify = (creditCardNumber: String): String => {
   const creditCardNumberLength = creditCardNumber.length;
   if (creditCardNumberLength < 7) {

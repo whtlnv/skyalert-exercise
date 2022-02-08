@@ -1,4 +1,4 @@
-class MalformedExprError extends Error {}
+class MalformedExprError extends Error { }
 
 /**
  * Define here your custom operators, or push a new entry directly from your package.

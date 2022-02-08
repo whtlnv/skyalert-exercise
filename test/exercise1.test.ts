@@ -1,4 +1,4 @@
-import { maskify } from '../src';
+import { maskify } from '../src/exercise1';
 
 describe('maskify', () => {
   it('mask all digits except for first and last four digits of strings greater than 7 characters', () => {

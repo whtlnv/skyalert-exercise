@@ -1,4 +1,4 @@
-import { numberToOrdinal } from '../src';
+import { numberToOrdinal } from '../src/exercise2';
 
 describe('ordinal', () => {
   it('returns `0` for 0', () => {

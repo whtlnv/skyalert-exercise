@@ -1,4 +1,4 @@
-import { calculate } from '../src';
+import { calculate } from '../src/exercise3';
 
 describe('reverse polish notation calculator', () => {
   it('adds numbers', () => {

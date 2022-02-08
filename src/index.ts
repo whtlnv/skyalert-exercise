@@ -18,3 +18,7 @@ export const maskify = (creditCardNumber: String): String => {
     )
   );
 };
+
+export const numberToOrdinal = (n: number): String => {
+  return String(n);
+};

@@ -1,4 +1,4 @@
-class MalformedExprError extends Error { }
+class MalformedExprError extends Error {}
 
 /**
  * Define here your custom operators, or push a new entry directly from your package.
@@ -21,12 +21,9 @@ export var operators: {
 /**
  * Calculate the result of a reverse-polish notation string, supported operators are `+`,
  * `-`, `*` and `/`, to extend the operators add it to `operators` array in this module.
- * 
  * All operators require two arguments (left and right), if only one operator is avaliable at
- * any time, this function will throw an MalformedExprError. 
- * 
+ * any time, this function will throw an MalformedExprError.
  * Operands and operators are considerated any strings between spaces.
- * 
  * @param expr A reverse-polish notation string containing standard arithmetic operations
  * @returns The result of evaluation the expression
  */

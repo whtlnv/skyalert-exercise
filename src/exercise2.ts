@@ -1,6 +1,5 @@
 /**
  * Convert the number into ordinal form using English rules.
- * 
  * @param n an intenger number to be transformed into ordinal
  * @returns a string containing the ordinal format of the
  */

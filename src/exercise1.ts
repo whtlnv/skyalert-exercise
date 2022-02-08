@@ -1,10 +1,7 @@
-
 /**
  * Obfuscates a credit card number using 'x' symbols when needed.
- * 
  * Only first and last four characters are left on strings greater than 7 characters,
  * otherwise string is left intact.
- * 
  * @param creditCardNumber a string containing only digits to be masked.
  * @returns a masked credit card number using 'x' as obfuscator.
  */

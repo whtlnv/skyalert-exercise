@@ -36,9 +36,13 @@ describe('reverse polish notation calculator', () => {
   });
 
   it('fails when giving malfored expressions', () => {
-    expect(() => { calculate('+') }).toThrowError('Error at pos 0, no right operator available');
-    expect(() => { calculate('1 +') }).toThrowError('Error at pos 1, no left operator available');
-    expect(() => { calculate('') }).toThrowError('No operations provided');
-    expect(() => { calculate('1 0 /') }).toThrowError('Division by zero');
+    expect(() => calculate('+')).toThrowError(
+      'Error at pos 0, no right operator available'
+    );
+    expect(() => calculate('1 +')).toThrowError(
+      'Error at pos 1, no left operator available'
+    );
+    expect(() => calculate('')).toThrowError('No operations provided');
+    expect(() => calculate('1 0 /')).toThrowError('Division by zero');
   });
 });

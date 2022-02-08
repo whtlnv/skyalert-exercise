@@ -44,27 +44,29 @@ export const numberToOrdinal = (n: number): string => {
   return nStr + (lastDigit in suffixes ? suffixes[lastDigit] : 'th');
 };
 
-class MalformedExprError extends Error {};
+class MalformedExprError extends Error {}
 
-export const operators: {[key: string] : (left: number, right: number) => number} = {
-  "+": (left: number, right: number): number => left + right,
-  "-": (left: number, right: number): number => left - right,
-  "*": (left: number, right: number): number => left * right,
-  "/": (left: number, right: number): number => { 
-    if (right == 0) {
+export const operators: {
+  [key: string]: (left: number, right: number) => number;
+} = {
+  '+': (left: number, right: number): number => left + right,
+  '-': (left: number, right: number): number => left - right,
+  '*': (left: number, right: number): number => left * right,
+  '/': (left: number, right: number): number => {
+    if (right === 0) {
       throw new MalformedExprError('Division by zero');
     }
 
-    return left / right; 
+    return left / right;
   },
 };
 
 export const calculate = (expr: string): number => {
-  if (expr == "") {
+  if (expr === '') {
     throw new MalformedExprError(`No operations provided`);
   }
 
-  const stack: [number?] = [];
+  const stack: number[] = [];
   const tokens = expr.split(' ');
   const isNumber = (token: string) => token.match(/-?\d+/);
   const isOperator = (token: string) => token in operators;
@@ -76,18 +78,24 @@ export const calculate = (expr: string): number => {
     } else if (isOperator(token)) {
       const right: number | undefined = stack.pop();
       if (right === undefined) {
-        throw new MalformedExprError(`Error at pos ${location}, no right operator available`);
+        throw new MalformedExprError(
+          `Error at pos ${location}, no right operator available`
+        );
       }
 
       const left: number | undefined = stack.pop();
       if (left === undefined) {
-        throw new MalformedExprError(`Error at pos ${location}, no left operator available`);
+        throw new MalformedExprError(
+          `Error at pos ${location}, no left operator available`
+        );
       }
 
       const result = operators[token](left, right);
       stack.push(result);
     } else {
-      throw new MalformedExprError(`Error at pos ${location}, unknown token: "${token}", was expecting operator or operand`);
+      throw new MalformedExprError(
+        `Error at pos ${location}, unknown token: "${token}", was expecting operator or operand`
+      );
     }
 
     location += token.length;

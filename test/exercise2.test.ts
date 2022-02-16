@@ -45,6 +45,15 @@ describe('ordinal', () => {
     expect(numberToOrdinal(50)).toEqual('50th');
   });
 
+  it('handles large integers', () => {
+    expect(numberToOrdinal(10001)).toEqual('10001st');
+    expect(numberToOrdinal(20011)).toEqual('20011th');
+    expect(numberToOrdinal(30012)).toEqual('30012th');
+    expect(numberToOrdinal(40021)).toEqual('40021st');
+    expect(numberToOrdinal(50111)).toEqual('50111th');
+    expect(numberToOrdinal(50003)).toEqual('50003rd');
+    expect(numberToOrdinal(50013)).toEqual('50013th');
+  });
   it('throws errors on negative numbers', () => {
     expect(() => {
       numberToOrdinal(-1);

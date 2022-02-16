@@ -44,7 +44,7 @@ describe('ordinal', () => {
     expect(numberToOrdinal(40)).toEqual('40th');
     expect(numberToOrdinal(50)).toEqual('50th');
   });
-  
+
   it('handles large integers', () => {
     expect(numberToOrdinal(10001)).toEqual('10001st');
     expect(numberToOrdinal(20011)).toEqual('20011th');
@@ -54,7 +54,6 @@ describe('ordinal', () => {
     expect(numberToOrdinal(50003)).toEqual('50003rd');
     expect(numberToOrdinal(50013)).toEqual('50013th');
   });
-
   it('throws errors on negative numbers', () => {
     expect(() => {
       numberToOrdinal(-1);

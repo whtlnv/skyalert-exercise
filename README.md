@@ -1,4 +1,4 @@
-# Sky-Alert Exercise solution
+# Sky-Alert Exercise solution :3
 
 This solves all three exercises proposed by PDF sent by email, package has been created using `tsdx` as recommended with default configurations as well.
 

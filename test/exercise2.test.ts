@@ -52,6 +52,7 @@ describe('ordinal', () => {
     expect(numberToOrdinal(40021)).toEqual('40021st');
     expect(numberToOrdinal(50111)).toEqual('50111th');
     expect(numberToOrdinal(50003)).toEqual('50003rd');
+    expect(numberToOrdinal(50013)).toEqual('50013th');
   });
 
   it('throws errors on negative numbers', () => {
